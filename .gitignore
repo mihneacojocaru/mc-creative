@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Spotlight-Verschlüsselung
+.Spotlight-V100
+.Trashes
+
+# macOS Systemdateien
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# PhpStorm / WebStorm / IntelliJ IDEA
+.idea/
+!.idea/codeStyles
+!.idea/runConfigurations
+
+# Optional: spezifische Datei ausschließen
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries
+.idea/php.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/git_toolbox_blame.xml
+.idea/UnderConstruction.iml
