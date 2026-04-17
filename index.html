@@ -28,7 +28,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
 
     <!-- LCP image preload -->
-    <link rel="preload" as="image" href="/assets/images/portrait.jpeg" />
+    <link rel="preload" as="image" href="/assets/images/portrait.webp" type="image/webp" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,13 +76,16 @@
       <!-- Profile -->
       <div class="p-8 pb-6 border-b border-neutral-100">
         <a href="#intro" class="block w-20 h-20 rounded-full overflow-hidden mb-5 ring-2 ring-neutral-100">
-          <img
-            src="/assets/images/portrait-sq.jpeg"
-            alt="Mihnea Cojocaru – Profilbild"
-            class="w-full h-full object-cover object-top"
-            width="80"
-            height="80"
-          />
+          <picture>
+            <source srcset="/assets/images/portrait-sq-min.webp" type="image/webp" />
+            <img
+              src="/assets/images/portrait-sq-min.jpeg"
+              alt="Mihnea Cojocaru – Profilbild"
+              class="w-full h-full object-cover object-top"
+              width="80"
+              height="80"
+            />
+          </picture>
         </a>
         <p class="text-sm font-semibold text-neutral-900 leading-snug mb-0.5">Mihnea Cojocaru</p>
         <p class="text-xs text-neutral-500 leading-snug mb-2 font-light tracking-wide" aria-label="Aussprache">
@@ -146,7 +149,7 @@
       class="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-neutral-100 flex items-center justify-between px-5 h-14 lg:hidden"
     >
       <a href="#intro" class="flex items-center gap-2.5">
-        <img src="/android-chrome-192x192.png" alt="" aria-hidden="true" class="w-7 h-7 rounded" />
+        <img src="/assets/logo.webp" alt="" aria-hidden="true" class="w-7 h-7 rounded" />
         <span class="text-sm font-semibold text-neutral-900">Mihnea Cojocaru</span>
       </a>
       <button
@@ -173,13 +176,16 @@
 
           <!-- Portrait -->
           <div class="relative bg-neutral-100 overflow-hidden rounded-sm aspect-4/5 md:aspect-3/4 max-h-[520px] w-full">
-            <img
-              src="/assets/images/portrait.jpeg"
-              alt="Mihnea Cojocaru – Senior Frontend Developer"
-              class="w-full h-full object-cover object-center absolute inset-0"
-              loading="eager"
-              fetchpriority="high"
-            />
+            <picture>
+              <source srcset="/assets/images/portrait.webp" type="image/webp" />
+              <img
+                src="/assets/images/portrait.jpeg"
+                alt="Mihnea Cojocaru – Senior Frontend Developer"
+                class="w-full h-full object-cover object-center absolute inset-0"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </picture>
           </div>
 
           <!-- Intro Text -->
