@@ -1,159 +1,824 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
   <head>
-    <!-- 
-          Coded with <3 by: Mihnea Cojocaru
-        -->
+    <!-- Coded with care by Mihnea Cojocaru -->
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, height=device-height, initial-scale=1.0"
-    />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Mihnea Cojocaru – Webdesign, Mix & Mastering. Portfolio-Seite im Aufbau. Bald findest du hier Projekte rund um Web & Sound."
+      content="Mihnea Cojocaru – Senior Frontend & Full-Stack Entwickler aus Troisdorf. Spezialisiert auf TYPO3, moderne Frontend-Technologien, Accessibility und Web Performance."
     />
-    <meta name="date" content="2025-03-28" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://mc-creative.de/" />
 
-    <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:title"
-      content="Mihnea Cojocaru | Web & Sound in progress"
-    />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mihnea Cojocaru | Frontend Developer" />
     <meta
       property="og:description"
-      content="Portfolio im Aufbau: Projekte aus Webdesign, Mix & Mastering für Musik und Podcasts – und mehr."
+      content="Senior Frontend & Full-Stack Entwickler. TYPO3, Alpine.js, Vue.js, React, Accessibility, Performance."
     />
-    <meta property="og:image" content="https://mc-creative.de/image.webp" />
+    <meta property="og:image" content="https://mc-creative.de/assets/images/portrait.jpeg" />
     <meta property="og:url" content="https://mc-creative.de/" />
     <meta property="og:type" content="website" />
 
-    <!-- Title -->
-    <title>Mihnea Cojocaru | Web & Sound</title>
-
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
-    <!-- Web App / Homescreen Icons -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="/android-chrome-512x512.png"
-    />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./style.min.css" />
+    <title>Mihnea Cojocaru | Senior Frontend Developer</title>
   </head>
-  <body class="playfair-display-font">
-    <div class="wrapper">
-      <div class="container-1">
-        <h1 class="logo">Mihnea Cojocaru</h1>
-        <div class="main-text-container">
-          <h2 class="headline">
-            Web & Sound <br />
-            in progress.
-          </h2>
-          <p class="claim">
-            Ich entwickle Webseiten mit Stil – und bringe Klang auf den Punkt.
-            Aktuell baue ich meine neue Portfolio-Seite auf. <br />
-            Bald findest du hier Projekte aus <strong>Webdesign</strong>,
-            <strong>Mix</strong> & <strong>Mastering</strong> für
-            <strong>Musik</strong> und <strong>Podcasts</strong> – sowie andere
-            Experimente und kreative Ideen, die mich begeistern.
-          </p>
+
+  <body class="text-neutral-800 font-sans antialiased">
+
+    <!-- ================================================================
+         MOBILE OVERLAY (closes drawer on click)
+    ================================================================ -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/40 z-20 hidden lg:hidden"
+      aria-hidden="true"
+    ></div>
+
+    <!-- ================================================================
+         SIDEBAR
+    ================================================================ -->
+    <aside
+      id="sidebar"
+      class="fixed top-0 left-0 h-full w-64 bg-white border-r border-neutral-100 z-30 flex flex-col -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
+      aria-label="Seitennavigation"
+    >
+      <!-- Profile -->
+      <div class="p-8 pb-6 border-b border-neutral-100">
+        <div class="w-20 h-20 rounded-full overflow-hidden mb-5 ring-2 ring-neutral-100">
+          <img
+            src="/assets/images/portrait-sq.jpeg"
+            alt="Mihnea Cojocaru – Profilbild"
+            class="w-full h-full object-cover object-top"
+            width="80"
+            height="80"
+          />
         </div>
-        <div class="links">
-          <span
-            id="linkedin-link"
-            class="link"
-            href="#"
-            title="LinkedIn"
-            aria-label="LinkedIn"
-          >
-            <svg
-              width="20px"
-              height="20px"
-              viewBox="0 0 20 20"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <title>linkedin [#161]</title>
-              <desc>Created with Sketch.</desc>
-              <defs></defs>
-              <g
-                id="Page-1"
-                stroke="none"
-                stroke-width="1"
-                fill="none"
-                fill-rule="evenodd"
-              >
-                <g
-                  id="Dribbble-Light-Preview"
-                  transform="translate(-180.000000, -7479.000000)"
-                  fill="CurrentColor"
-                >
-                  <g id="icons" transform="translate(56.000000, 160.000000)">
-                    <path
-                      d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z"
-                      id="linkedin-[#161]"
-                    ></path>
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </span>
-          <span
-            id="email-link"
-            class="link link--mail"
+        <p class="text-sm font-semibold text-neutral-900 leading-snug mb-0.5">Mihnea Cojocaru</p>
+        <p class="text-sm text-neutral-500 leading-snug">Senior Frontend Developer</p>
+        <p class="text-sm text-neutral-600 mt-1">Troisdorf, DE</p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex-1 py-5 overflow-y-auto" aria-label="Hauptnavigation">
+        <ul class="space-y-0.5 px-3" role="list">
+          <li><a href="#intro"        class="nav-link">Über mich</a></li>
+          <li><a href="#what-i-do"    class="nav-link">Was ich mache</a></li>
+          <li><a href="#resume"       class="nav-link">Lebenslauf</a></li>
+          <li><a href="#technologies" class="nav-link">Technologien</a></li>
+          <li><a href="#clients"      class="nav-link">Kunden</a></li>
+          <li><a href="#softskills"   class="nav-link">Soft Skills</a></li>
+          <li><a href="#ehrenamt"     class="nav-link">Ehrenamt</a></li>
+          <li><a href="#contact"      class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <!-- Social Links -->
+      <div class="p-6 border-t border-neutral-100">
+        <div class="flex items-center gap-2">
+          <a
+            class="js-email-link social-icon-btn"
             href="#"
             title="E-Mail"
-            aria-label="E-Mail"
+            aria-label="E-Mail senden"
           >
-            <svg
-              fill="CurrentColor"
-              width="20px"
-              height="20px"
-              viewBox="0 0 1920 1920"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </a>
+          <a
+            class="js-linkedin-link social-icon-btn"
+            href="#"
+            target="_blank"
+            title="LinkedIn"
+            aria-label="LinkedIn-Profil öffnen"
+          >
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a
+            class="js-github-link social-icon-btn"
+            href="#"
+            target="_blank"
+            title="GitHub"
+            aria-label="GitHub-Profil öffnen"
+          >
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
         </div>
       </div>
-      <div class="container-2">
-        <img
-          class="design-image"
-          src="/image.webp"
-          alt="Abstrakte Farbkomposition mit Blau, Orange und Pastelltönen"
-        />
-      </div>
-    </div>
-    <script src="/script.min.js"></script>
+
+      <!-- Close Button (mobile only) -->
+      <button
+        id="sidebar-close"
+        class="absolute top-4 right-4 lg:hidden p-1.5 rounded text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors duration-150"
+        aria-label="Navigation schließen"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </aside>
+
+    <!-- ================================================================
+         MOBILE HEADER
+    ================================================================ -->
+    <header
+      class="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-neutral-100 flex items-center justify-between px-5 h-14 lg:hidden"
+    >
+      <span class="text-sm font-semibold text-neutral-900">Mihnea Cojocaru</span>
+      <button
+        id="sidebar-open"
+        class="p-1.5 rounded text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors duration-150"
+        aria-label="Navigation öffnen"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </header>
+
+    <!-- ================================================================
+         MAIN CONTENT
+    ================================================================ -->
+    <main class="lg:ml-64">
+
+      <!-- ============================================================
+           1. INTRO / HERO
+      ============================================================ -->
+      <section id="intro" class="border-b border-neutral-100 py-12 md:py-16 px-6">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+
+          <!-- Portrait -->
+          <div class="relative bg-neutral-100 overflow-hidden rounded-sm aspect-4/5 md:aspect-3/4 max-h-[520px] w-full">
+            <img
+              src="/assets/images/portrait.jpeg"
+              alt="Mihnea Cojocaru – Senior Frontend Developer"
+              class="w-full h-full object-cover object-center absolute inset-0"
+              loading="eager"
+            />
+          </div>
+
+          <!-- Intro Text -->
+          <div class="flex flex-col justify-center">
+            <p class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-4">
+              Senior Frontend Developer
+            </p>
+            <h1 class="font-display text-5xl md:text-6xl font-bold text-neutral-900 leading-none mb-7">
+              Mihnea<br />Cojocaru
+            </h1>
+            <p class="text-base text-neutral-600 leading-relaxed max-w-sm mb-8">
+              Frontend- und Full-Stack-Entwickler mit Schwerpunkt auf TYPO3, modernen
+              Frontend-Technologien, barrierearmen Weblösungen und performanten Benutzeroberflächen.
+              Erfahrung in agilen Projekten, technischer Beratung und der Zusammenarbeit
+              zwischen Design, Entwicklung und CMS-Integration.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="#contact"
+                class="inline-flex items-center gap-2 px-5 py-2.5 border border-neutral-900 rounded-sm text-sm font-medium text-neutral-900 hover:bg-neutral-900 hover:text-white transition-colors duration-200"
+              >
+                Kontakt aufnehmen
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================
+           2. WHAT I DO
+      ============================================================ -->
+      <section id="what-i-do" class="py-20 px-6 border-b border-neutral-100">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="section-heading">Was ich mache</h2>
+
+          <div class="mt-12 grid sm:grid-cols-2 gap-x-12 gap-y-10">
+
+            <div class="flex gap-5">
+              <div class="shrink-0 mt-0.5">
+                <i data-lucide="monitor" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-neutral-900 mb-2">Frontend-Entwicklung</h3>
+                <p class="text-base text-neutral-500 leading-relaxed">
+                  Moderne, responsive und barrierearme Interfaces – von der Komponente bis zur
+                  fertigen Seite, mit einem starken Fokus auf sauberen, wartbaren Code.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-5">
+              <div class="shrink-0 mt-0.5">
+                <i data-lucide="globe" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-neutral-900 mb-2">TYPO3 &amp; CMS</h3>
+                <p class="text-base text-neutral-500 leading-relaxed">
+                  Individuelle Lösungen auf Basis von TYPO3, Content Blocks, Fluid Templates
+                  und Extbase – für komplexe und skalierbare Web-Projekte.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-5">
+              <div class="shrink-0 mt-0.5">
+                <i data-lucide="eye" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-neutral-900 mb-2">Accessibility</h3>
+                <p class="text-base text-neutral-500 leading-relaxed">
+                  Barrierearme Interfaces, WCAG-konforme Umsetzung und Accessibility-Audits
+                  als fester Bestandteil meiner Entwicklungsarbeit.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-5">
+              <div class="shrink-0 mt-0.5">
+                <i data-lucide="zap" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-neutral-900 mb-2">Performance</h3>
+                <p class="text-base text-neutral-500 leading-relaxed">
+                  Optimierung von Ladezeiten, Core Web Vitals und Rendering-Performance
+                  für spürbar bessere Nutzererlebnisse.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-5">
+              <div class="shrink-0 mt-0.5">
+                <i data-lucide="message-circle" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-neutral-900 mb-2">Technische Beratung</h3>
+                <p class="text-base text-neutral-500 leading-relaxed">
+                  Umsetzbarkeit, Frontend-Architektur und Machbarkeit – in enger Abstimmung
+                  mit Design und Projektleitung.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-5">
+              <div class="shrink-0 mt-0.5">
+                <i data-lucide="boxes" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-neutral-900 mb-2">Komponentenbasierte Entwicklung</h3>
+                <p class="text-base text-neutral-500 leading-relaxed">
+                  Wartbare, wiederverwendbare Komponenten mit Vue.js, React, Alpine.js
+                  und TYPO3 Content Blocks.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           3. CORE INFO (two columns)
+      ============================================================ -->
+      <section id="core-info" class="py-20 px-6 border-b border-neutral-100 bg-neutral-50/60">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
+
+          <!-- Left: How I work -->
+          <div>
+            <h2 class="section-heading">Wie ich arbeite</h2>
+            <div class="mt-8 space-y-5 text-base text-neutral-600 leading-relaxed">
+              <p>
+                Ich verbinde technisches Verständnis mit einem hohen Qualitätsanspruch und einem
+                starken Fokus auf sauberen, wartbaren Code. Besonders wichtig ist mir die enge
+                Abstimmung zwischen Design, Entwicklung, fachlichen Anforderungen und den
+                Bedürfnissen der Kunden.
+              </p>
+              <p>
+                In agilen Teams bringe ich mich mit Pair Programming, Code Reviews und
+                kontinuierlichem Austausch ein. Komplexe Anforderungen übersetze ich in
+                pragmatische, nachhaltige Lösungen – immer mit Blick auf Lesbarkeit, Struktur
+                und langfristige Wartbarkeit.
+              </p>
+              <p>
+                Durch meinen über zehnjährigen Hintergrund in Multimedia und Audio bringe ich
+                zusätzlich ein geschultes Auge für technische Präzision und Nutzererlebnis mit.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Profile facts -->
+          <div>
+            <h2 class="section-heading">Profil</h2>
+            <div class="mt-8 space-y-8">
+
+              <div>
+                <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-4">
+                  Sprachen
+                </h3>
+                <ul class="divide-y divide-neutral-100">
+                  <li class="flex items-center justify-between py-2 text-sm">
+                    <span class="text-base text-neutral-700">Deutsch</span>
+                    <span class="text-neutral-600 text-sm">Sehr gut</span>
+                  </li>
+                  <li class="flex items-center justify-between py-2 text-sm">
+                    <span class="text-base text-neutral-700">Englisch</span>
+                    <span class="text-neutral-600 text-sm">Sehr gut</span>
+                  </li>
+                  <li class="flex items-center justify-between py-2 text-sm">
+                    <span class="text-base text-neutral-700">Rumänisch</span>
+                    <span class="text-neutral-600 text-sm">Muttersprache</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-4">
+                  Standort
+                </h3>
+                <div class="flex items-center gap-2 text-base text-neutral-600">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-accent flex-shrink-0"></i>
+                  <span>Troisdorf, Nordrhein-Westfalen</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-4">
+                  Erfahrung
+                </h3>
+                <p class="text-base text-neutral-600">
+                  5+ Jahre Webentwicklung &amp; CMS<br />
+                  10+ Jahre Multimedia, Audio &amp; Veranstaltung
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================
+           4. RESUME
+      ============================================================ -->
+      <section id="resume" class="py-20 px-6 border-b border-neutral-100">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="section-heading">Lebenslauf</h2>
+
+          <div class="mt-12 grid md:grid-cols-2 gap-16">
+
+            <!-- Experience -->
+            <div>
+              <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-8">
+                Berufserfahrung
+              </h3>
+              <ol class="space-y-4 relative before:absolute before:left-1.5 before:top-2 before:bottom-0 before:w-px before:bg-neutral-200" role="list">
+
+                <li>
+                  <div class="inline-flex items-center gap-3 mb-1 pl-6">
+                    <i class="block w-2 h-2 rounded-full bg-accent shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm text-neutral">2022 – heute</p>
+                  </div>
+                  <div class="pl-6 space-y-4">
+                    <h4 class="text-2xl font-semibold text-neutral-900">Fullstack-Entwickler, Fokus Frontend</h4>
+                    <p class="text-sm text-neutral-700">u+i interact GmbH</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                      Entwicklung moderner Webprojekte mit TYPO3, Vue.js, React und Alpine.js.
+                      Technische Beratung, Accessibility, Performance-Optimierung,
+                      Code Reviews und Onboarding.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="inline-flex items-center gap-3 mb-1 pl-6">
+                    <i class="block w-2 h-2 rounded-full bg-neutral-300 shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm text-neutral-600">2021 – 2022</p>
+                  </div>
+                  <div class="pl-6 space-y-4">
+                    <h4 class="text-2xl font-semibold text-neutral-900">Fullstack-Entwickler (freiberuflich)</h4>
+                    <p class="text-sm text-neutral-700">Selbstständig</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                      Design und Umsetzung nutzerfreundlicher Weboberﬂächen,
+                      individuelle Frontend-Lösungen, Direktkontakt mit Kunden.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="inline-flex items-center gap-3 mb-1 pl-6">
+                    <i class="block w-2 h-2 rounded-full bg-neutral-300 shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm text-neutral-600">2013 – 2020</p>
+                  </div>
+                  <div class="pl-6 space-y-4">
+                    <h4 class="text-2xl font-semibold text-neutral-900">Freiberufliche Audio- und Multimediaprojekte</h4>
+                    <p class="text-sm text-neutral-700">Selbstständig</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                      Technische Betreuung, Planung und Umsetzung von Projekten
+                      im Audio- und Veranstaltungsbereich.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="inline-flex items-center gap-3 mb-1 pl-6">
+                    <i class="block w-2 h-2 rounded-full bg-neutral-300 shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm text-neutral-600">2017 – 2020</p>
+                  </div>
+                  <div class="pl-6 space-y-4">
+                    <h4 class="text-2xl font-semibold text-neutral-900">Toningenieur</h4>
+                    <p class="text-sm text-neutral-700">Harmonic Design Romania GmbH</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                      Projektmanagement, Konfiguration und Kalibrierung von Audioanlagen,
+                      technische Betreuung professioneller Audioumgebungen.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="inline-flex items-center gap-3 mb-1 pl-6">
+                    <i class="block w-2 h-2 rounded-full bg-neutral-300 shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm text-neutral-600">2013 – 2017</p>
+                  </div>
+                  <div class="pl-6 space-y-4">
+                    <h4 class="text-2xl font-semibold text-neutral-900">Toningenieur</h4>
+                    <p class="text-sm text-neutral-700">Theater „Constantin Tanase" Bukarest</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                      Planung von Grafik- und Tondesign, Projektmanagement,
+                      technische Begleitung von Produktionen.
+                    </p>
+                  </div>
+                </li>
+
+              </ol>
+            </div>
+
+            <!-- Education -->
+            <div>
+              <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-8">
+                Ausbildung &amp; Weiterbildung
+              </h3>
+              <ol class="space-y-8 relative before:absolute before:left-1.5 before:top-2 before:bottom-0 before:w-px before:bg-neutral-200" role="list">
+
+                <li>
+                  <div class="inline-flex items-center gap-3 mb-1 pl-6">
+                    <i class="block w-2 h-2 rounded-full bg-accent shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm text-neutral-600">2020 – 2021</p>
+                  </div>
+                  <div class="pl-6 space-y-4">
+                    <h4 class="text-2xl font-semibold text-neutral-900">Full-Stack Web Development</h4>
+                    <p class="text-sm text-neutral-700">My Code School, Hermannstadt / Rumänien</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                      Gezielte Weiterbildung mit Fokus auf moderne Webtechnologien
+                      und praxisnahe Anwendungsentwicklung.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="inline-flex items-center gap-3 mb-1 pl-6">
+                    <i class="block w-2 h-2 rounded-full bg-neutral-300 shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm text-neutral-600">2010 – 2014</p>
+                  </div>
+                  <div class="pl-6 space-y-4">
+                    <h4 class="text-2xl font-semibold text-neutral-900">Diplom-Ingenieur / B.Sc.</h4>
+                    <p class="text-sm text-neutral-700">Polytechnische Universität Bukarest</p>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                      Elektronik, Telekommunikation &amp; Informationstechnik –
+                      Spezialisierung Tontechnik.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="inline-flex items-center gap-3 mb-1 pl-6">
+                    <i class="block w-2 h-2 rounded-full bg-neutral-300 shrink-0" aria-hidden="true"></i>
+                    <p class="text-sm text-neutral-600">2006 – 2010</p>
+                  </div>
+                  <div class="pl-6 space-y-4">
+                    <h4 class="text-2xl font-semibold text-neutral-900">Allgemeine Hochschulreife</h4>
+                    <p class="text-sm text-neutral-700">
+                      Nationales Kolleg „Ion C. Bratianu", Pitesti / Rumänien
+                    </p>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                      Vergleichbar mit dem deutschen Abitur.
+                    </p>
+                  </div>
+                </li>
+
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           5. TECHNOLOGIES
+      ============================================================ -->
+      <section id="technologies" class="py-20 px-6 border-b border-neutral-100 bg-neutral-50/60">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="section-heading">Technologien &amp; Tools</h2>
+
+          <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="code-2" class="w-4 h-4 text-accent"></i>
+                <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest">
+                  Sprachen &amp; Grundlagen
+                </h3>
+              </div>
+              <ul>
+                <li class="tech-item">HTML5</li>
+                <li class="tech-item">CSS3 / SCSS</li>
+                <li class="tech-item">JavaScript</li>
+                <li class="tech-item">TypeScript</li>
+                <li class="tech-item">PHP</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="package" class="w-4 h-4 text-accent"></i>
+                <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest">
+                  Frameworks &amp; Libraries
+                </h3>
+              </div>
+              <ul>
+                <li class="tech-item">Vue.js</li>
+                <li class="tech-item">React</li>
+                <li class="tech-item">Alpine.js</li>
+                <li class="tech-item">TailwindCSS</li>
+                <li class="tech-item">Fluid / Twig / JSX</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="layers" class="w-4 h-4 text-accent"></i>
+                <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest">
+                  CMS &amp; Web
+                </h3>
+              </div>
+              <ul>
+                <li class="tech-item">TYPO3</li>
+                <li class="tech-item">TYPO3 Content Blocks</li>
+                <li class="tech-item">Extbase</li>
+                <li class="tech-item">Fluid Templates</li>
+                <li class="tech-item">REST APIs / JSON</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="check-circle" class="w-4 h-4 text-accent"></i>
+                <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest">
+                  Methoden &amp; Qualität
+                </h3>
+              </div>
+              <ul>
+                <li class="tech-item">Agile / Scrum</li>
+                <li class="tech-item">Code Reviews</li>
+                <li class="tech-item">Pair Programming</li>
+                <li class="tech-item">Accessibility-Audits</li>
+                <li class="tech-item">Performance-Audits</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="wrench" class="w-4 h-4 text-accent"></i>
+                <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest">
+                  Tools
+                </h3>
+              </div>
+              <ul>
+                <li class="tech-item">Git / GitLab</li>
+                <li class="tech-item">Figma</li>
+                <li class="tech-item">Postman</li>
+                <li class="tech-item">Vite</li>
+                <li class="tech-item">Playwright</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="star" class="w-4 h-4 text-accent"></i>
+                <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest">
+                  Fachliche Schwerpunkte
+                </h3>
+              </div>
+              <ul>
+                <li class="tech-item">Responsive Design</li>
+                <li class="tech-item">Barrierefreiheit / WCAG</li>
+                <li class="tech-item">Web Performance</li>
+                <li class="tech-item">Frontend-Architektur</li>
+                <li class="tech-item">API-Integration</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           6. CLIENTS / LOGO WALL
+      ============================================================ -->
+      <section id="clients" class="py-20 border-b border-neutral-100">
+        <div class="max-w-5xl mx-auto px-6 mb-10 lg:mb-16">
+          <h2 class="section-heading">Ausgewählte Kunden</h2>
+          <p class="text-base text-neutral-500 mt-2">
+            Projekte aus mehreren Jahren Zusammenarbeit bei u+i interact GmbH und als Freiberufler.
+          </p>
+        </div>
+
+        <div id="logo-wall"></div>
+      </section>
+
+      <!-- ============================================================
+           7. SOFT SKILLS
+      ============================================================ -->
+      <section id="softskills" class="py-20 px-6 border-b border-neutral-100 bg-neutral-50/60">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="section-heading">Soft Skills</h2>
+
+          <div class="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+
+            <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
+              <i data-lucide="list-ordered" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <p class="text-base text-neutral-700 leading-snug">
+                Strukturierte &amp; selbstständige Arbeitsweise
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
+              <i data-lucide="shield-check" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <p class="text-base text-neutral-700 leading-snug">
+                Hohes Qualitätsbewusstsein
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
+              <i data-lucide="lightbulb" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <p class="text-base text-neutral-700 leading-snug">
+                Lösungsorientiertes Denken
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
+              <i data-lucide="users" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <p class="text-base text-neutral-700 leading-snug">
+                Teamfähigkeit &amp; Kommunikationsstärke
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
+              <i data-lucide="book-open" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <p class="text-base text-neutral-700 leading-snug">
+                Schnelle Einarbeitung in neue Themen
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
+              <i data-lucide="network" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <p class="text-base text-neutral-700 leading-snug">
+                Zusammenarbeit in interdisziplinären Teams
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           8. EHRENAMT
+      ============================================================ -->
+      <section id="ehrenamt" class="py-20 px-6 border-b border-neutral-100">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="section-heading">Ehrenamt</h2>
+
+          <div class="mt-10 grid md:grid-cols-2 gap-12">
+
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <i data-lucide="volume-2" class="w-5 h-5 text-accent flex-shrink-0"></i>
+                <h3 class="text-2xl font-semibold text-neutral-900">
+                  Technische Beratung &amp; Systembetreuung
+                </h3>
+              </div>
+              <p class="text-sm text-neutral-600 mb-5 ml-8">seit 2021 · ehrenamtlich</p>
+              <p class="text-base text-neutral-600 leading-relaxed mb-6">
+                Ehrenamtliche Unterstützung im kirchlichen Umfeld: Planung, Aufbau und Kalibrierung
+                von Audio- und Veranstaltungssystemen sowie Schulung und fachliche Begleitung
+                von Technikteams.
+              </p>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5 text-base text-neutral-600">
+                  <i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                  <span>Planung, Aufbau und Kalibrierung von Beschallungssystemen</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-base text-neutral-600">
+                  <i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                  <span>Schulung und Training von Technikteams</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-base text-neutral-600">
+                  <i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                  <span>Optimierung bestehender Veranstaltungssetups</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-5">
+                Unterstützte Kirchen
+              </h3>
+              <ul class="space-y-2.5">
+                <li class="flex items-center gap-2.5 text-base text-neutral-600">
+                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                  FCG Bielefeld (Freie Evangelische Christengemeinde)
+                </li>
+                <li class="flex items-center gap-2.5 text-base text-neutral-600">
+                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                  FCG Gütersloh
+                </li>
+                <li class="flex items-center gap-2.5 text-base text-neutral-600">
+                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                  KfH – Kirche für Herford
+                </li>
+                <li class="flex items-center gap-2.5 text-base text-neutral-600">
+                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                  ICF Bielefeld
+                </li>
+                <li class="flex items-center gap-2.5 text-base text-neutral-600">
+                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                  Ecclesia Bielefeld
+                </li>
+                <li class="flex items-center gap-2.5 text-base text-neutral-600">
+                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                  Kirche für Bonn
+                </li>
+                <li class="flex items-center gap-2.5 text-base text-neutral-600">
+                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                  CCT
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           9. CONTACT
+      ============================================================ -->
+      <section id="contact" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="section-heading">Kontakt</h2>
+          <p class="text-base text-neutral-500 mt-3 mb-10 max-w-md">
+            Ich freue mich über Anfragen zu Projekten, Zusammenarbeit oder einem ersten
+            unverbindlichen Gespräch.
+          </p>
+
+          <div class="flex flex-col sm:flex-row flex-wrap gap-3">
+            <a
+              class="js-email-link contact-link"
+              href="#"
+              aria-label="E-Mail senden"
+            >
+              <i data-lucide="mail" class="w-5 h-5 text-accent"></i>
+              <span class="js-email-text">E-Mail laden …</span>
+            </a>
+            <a
+              class="js-linkedin-link contact-link"
+              href="#"
+              target="_blank"
+              aria-label="LinkedIn-Profil öffnen"
+            >
+              <i data-lucide="linkedin" class="w-5 h-5 text-accent"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t border-neutral-100 py-8 px-6">
+        <p class="text-sm text-neutral-600">
+          © <span id="footer-year"></span> Mihnea Cojocaru. Coded with care.
+        </p>
+      </footer>
+
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

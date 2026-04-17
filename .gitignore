@@ -1,3 +1,7 @@
+# Dependencies & Build Output
+node_modules/
+dist/
+
 # macOS
 .DS_Store
 .AppleDouble

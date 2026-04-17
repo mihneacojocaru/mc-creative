@@ -1,0 +1,135 @@
+// ─── Client Logo Data + Marquee Renderer ─────────────────────────────────────
+// Data lives here; the DOM for the logo wall is generated at runtime.
+
+export interface ClientLogo {
+  /** Display name shown under the logo */
+  readonly name: string
+  /** External website URL (opens in new tab) */
+  readonly url: string
+  /** Path to logo image (relative to /public or absolute URL) */
+  readonly image: string
+  /** Optional alt text override; defaults to `${name} Logo` */
+  readonly alt?: string
+}
+
+// Images resolve to `/public/assets/images/website-logos/<filename>`.
+// For entries without a final logo yet, the path points to the expected
+// filename — drop the downloaded file in with that exact name and it works.
+const LOGO_DIR = '/assets/images/website-logos'
+
+export const CLIENT_LOGOS: readonly ClientLogo[] = [
+  { name: 'BGHW',                            url: 'https://www.bghw.de/',                                          image: `${LOGO_DIR}/BGHW.png` },
+  { name: 'Theater Bielefeld', url: 'https://www.buo-bielefeld.de/',                               image: `${LOGO_DIR}/BUO-Bielefeld.png` },
+  { name: 'Eukanuba',                        url: 'https://www.eukanuba.eu/de-de/',                                image: `${LOGO_DIR}/Eukanuba.png` },
+  { name: 'IAMS',                            url: 'https://iams.eu/de-de/hund',                                    image: `${LOGO_DIR}/IAMS.png` },
+  { name: 'Tetra',                           url: 'https://www.tetra.net/en-eu/',                                  image: `${LOGO_DIR}/Tetra.svg` },
+  { name: 'Audi BKK',                        url: 'https://www.audibkk.de/',                                       image: `${LOGO_DIR}/AudiBkk.png` },
+  { name: 'FURminator',                      url: 'https://www.furminator.net/de-de',                              image: `${LOGO_DIR}/FURminator.png` },
+  { name: 'Bamaka',                          url: 'https://bamaka.de/',                                            image: `${LOGO_DIR}/Bamaka.png` },
+  { name: 'Karriere ALDI Süd',               url: 'https://karriere.aldi-sued.de/',                                image: `${LOGO_DIR}/AldiSued.png` },
+  { name: '8in1',                            url: 'https://www.8in1.eu/de-de/',                                    image: `${LOGO_DIR}/8in1.png` },
+  { name: 'Hochschule Hannover',             url: 'https://www.hs-hannover.de/',                                   image: `${LOGO_DIR}/HS-Hannover.png` },
+  { name: 'Hochschule für Gesundheit Bochum', url: 'https://www.hochschule-bochum.de/hochschule-fuer-gesundheit/', image: `${LOGO_DIR}/HS-Gesundheit.png` },
+  { name: 'DigitalCheck NRW',                url: 'https://www.digitalcheck.nrw/',                                 image: `${LOGO_DIR}/DigitalCheck.png` },
+  { name: 'Bethel',                          url: 'https://www.bethel.de/',                                        image: `${LOGO_DIR}/Bethel.png` },
+  { name: 'Westfalia Backhandwerk',          url: 'https://www.westfalia-backhandwerk.de/',                        image: `${LOGO_DIR}/WestfaliaBackhandwerk.svg` },
+  { name: "Nature's Miracle",                url: 'https://naturesmiracle.eu/de-de/',                              image: `${LOGO_DIR}/NaturesMiracle.png` },
+  { name: 'Optima Food Service',     url: 'https://www.optima-foodservice.de/',                            image: `${LOGO_DIR}/OptimaFoodService.png` },
+  { name: 'Sewerin',                         url: 'https://www.sewerin.com/',                                      image: `${LOGO_DIR}/Sewerin.png` },
+]
+
+// ─── DOM helpers ─────────────────────────────────────────────────────────────
+
+/**
+ * Build a single `<a class="logo-tile group">` element.
+ * `decorative = true` removes it from tab order and hides it from screen readers
+ * — used for marquee duplicate sets and the reverse row.
+ */
+function createTile(logo: ClientLogo, decorative: boolean): HTMLAnchorElement {
+  const a = document.createElement('a')
+  a.href = logo.url
+  a.target = '_blank'
+  a.rel = 'noopener'
+  a.className = 'logo-tile group'
+
+  if (decorative) {
+    a.tabIndex = -1
+  }
+
+  const imageWrap = document.createElement('span')
+  imageWrap.className = 'logo-tile__image'
+
+  const img = document.createElement('img')
+  img.src = logo.image
+  img.alt = decorative ? '' : (logo.alt ?? `${logo.name} Logo`)
+  imageWrap.appendChild(img)
+
+  const label = document.createElement('span')
+  label.textContent = logo.name
+
+  a.append(imageWrap, label)
+  return a
+}
+
+/** Build one `<div class="logos__group">` containing a full set of tiles. */
+function createGroup(
+  logos: readonly ClientLogo[],
+  options: { decorative: boolean; ariaHidden: boolean },
+): HTMLDivElement {
+  const group = document.createElement('div')
+  group.className = 'logos__group'
+  if (options.ariaHidden) group.setAttribute('aria-hidden', 'true')
+
+  for (const logo of logos) {
+    group.appendChild(createTile(logo, options.decorative))
+  }
+  return group
+}
+
+/**
+ * Build one marquee row with two duplicated groups for seamless looping.
+ * The first group is keyboard/screen-reader accessible unless `reverse` is set.
+ */
+function createMarquee(
+  logos: readonly ClientLogo[],
+  options: { reverse: boolean; ariaLabel?: string },
+): HTMLDivElement {
+  const marquee = document.createElement('div')
+  marquee.className = options.reverse
+    ? 'logos-marquee logos-marquee--reverse'
+    : 'logos-marquee'
+
+  if (options.reverse) {
+    marquee.setAttribute('aria-hidden', 'true')
+  } else if (options.ariaLabel) {
+    marquee.setAttribute('aria-label', options.ariaLabel)
+  }
+
+  // Primary group: tabbable only on the forward row
+  marquee.appendChild(
+    createGroup(logos, { decorative: options.reverse, ariaHidden: false }),
+  )
+  // Duplicate group: always decorative for the seamless loop
+  marquee.appendChild(
+    createGroup(logos, { decorative: true, ariaHidden: true }),
+  )
+
+  return marquee
+}
+
+// ─── Public API ──────────────────────────────────────────────────────────────
+
+/**
+ * Render the full logo wall (two marquee rows, opposite directions) into the
+ * element with the given id. No-op if the element is missing.
+ */
+export function renderLogoWall(containerId: string): void {
+  const container = document.getElementById(containerId)
+  if (!container) return
+
+  container.classList.add('logos-wall', 'space-y-10')
+  container.replaceChildren(
+    createMarquee(CLIENT_LOGOS, { reverse: false, ariaLabel: 'Kundenlogos' }),
+    createMarquee([...CLIENT_LOGOS].reverse(), { reverse: true }),
+  )
+}

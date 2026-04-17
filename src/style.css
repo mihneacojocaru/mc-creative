@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/* ─── Custom Theme Tokens ─────────────────────────────────────────────────── */
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+
+  --color-accent: #774069;
+
+  --spacing-wrapper: 1920px;
+}
+
+/* ─── Base Styles ─────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    /* Offset anchor links: mobile has a 56px sticky header */
+    scroll-padding-top: 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 2rem;
+    }
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-neutral-900;
+  }
+
+  /* Remove default list markers globally */
+  ul, ol {
+    @apply list-none pl-0;
+  }
+}
+
+/* ─── Component Classes ───────────────────────────────────────────────────── */
+@layer components {
+  /* Sidebar nav link — left border indicator shows on active */
+  .nav-link {
+    @apply block px-4 py-2 text-sm text-neutral-500 hover:text-neutral-900
+           transition-colors duration-150 border-l-2 border-transparent rounded-r-sm;
+  }
+
+  .nav-link--active {
+    @apply font-medium;
+    color: var(--color-accent);
+    border-left-color: var(--color-accent);
+  }
+
+  /* Section heading with bottom rule */
+  .section-heading {
+    @apply font-display text-[2rem] leading-tight font-bold text-neutral-900 pb-3 border-b border-neutral-200;
+  }
+
+  /* Small icon button used in sidebar social row */
+  .social-icon-btn {
+    @apply p-2 rounded text-neutral-400 hover:text-neutral-900
+           hover:bg-neutral-100 transition-colors duration-150;
+  }
+
+  /* Contact section link tiles */
+  .contact-link {
+    @apply inline-flex items-center gap-3 px-5 py-3 border border-neutral-200 rounded-sm
+           text-base text-neutral-700 hover:border-neutral-900 hover:text-neutral-900
+           transition-colors duration-200;
+  }
+
+  /* Logo wall tiles — anchor card: image on top, client name below */
+  .logo-tile {
+    @apply flex flex-col items-center gap-2 text-center shrink-0 w-60
+           text-sm font-medium text-neutral-600 hover:text-neutral-900
+           transition-colors duration-200;
+  }
+
+  .logo-tile__image {
+    @apply w-full h-32 flex items-center justify-center;
+  }
+
+  .logo-tile__image img {
+    @apply max-h-full max-w-full object-contain;
+  }
+
+  /* Technology list items with bottom border */
+  .tech-item {
+    @apply text-base text-neutral-600 py-1.5 border-b border-neutral-100 last:border-0;
+  }
+}
+
+/* ─── Marquee (outside @layer so raw CSS isn't deprioritized) ─────────────── */
+.logos-marquee {
+  --logos-gap: 4rem;
+  --logos-duration: 90s;
+  display: flex;
+  overflow: hidden;
+  gap: var(--logos-gap);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+}
+
+.logos__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: var(--logos-gap);
+  min-width: 100%;
+  animation: logos-slide var(--logos-duration) linear infinite;
+}
+
+.logos-marquee--reverse .logos__group {
+  animation-direction: reverse;
+}
+
+.logos-wall:hover .logos__group,
+.logos-marquee:hover .logos__group,
+.logos-marquee.pause-animation .logos__group {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logos__group { animation-play-state: paused; }
+}
+
+@keyframes logos-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% - var(--logos-gap))); }
+}
