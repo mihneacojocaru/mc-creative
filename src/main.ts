@@ -1,7 +1,7 @@
 import './style.css'
 import {
   createIcons,
-  Mail, Linkedin, Github,
+  Mail, Linkedin,
   X, Menu, ArrowDown,
   Monitor, Globe, Eye, Zap, MessageCircle, Boxes,
   MapPin, Code2, Package, Layers, CheckCircle, Wrench, Star,
@@ -10,7 +10,7 @@ import {
 import { renderLogoWall } from './logos'
 
 const ICONS = {
-  Mail, Linkedin, Github,
+  Mail, Linkedin,
   X, Menu, ArrowDown,
   Monitor, Globe, Eye, Zap, MessageCircle, Boxes,
   MapPin, Code2, Package, Layers, CheckCircle, Wrench, Star,
@@ -22,7 +22,6 @@ const ICONS = {
 interface ContactConfig {
   readonly emailParts: readonly string[]
   readonly linkedin: string
-  readonly github: string
 }
 
 // ─── Contact Config ───────────────────────────────────────────────────────────
@@ -30,8 +29,7 @@ interface ContactConfig {
 
 const CONTACT: ContactConfig = {
   emailParts: ['mihnea', '.co', '@', 'web', '.de'],
-  linkedin: 'https://www.linkedin.com/in/mihnea-cojocaru/', // ← update with actual URL
-  github: 'https://github.com/',                            // ← update with actual URL
+  linkedin: 'https://www.linkedin.com/in/mihnea-cojocaru/',
 }
 
 // ─── PersonalSite ─────────────────────────────────────────────────────────────
@@ -44,6 +42,7 @@ class PersonalSite {
   private closeBtn: HTMLButtonElement | null = null
   private clickNavTimer: number | null = null
   private isClickNavigating = false
+  private resizeTimer: number | null = null
 
   private constructor(contact: ContactConfig) {
     this.contact = contact
@@ -69,10 +68,6 @@ class PersonalSite {
     })
     document.querySelectorAll<HTMLAnchorElement>('.js-linkedin-link').forEach(el => {
       el.href = this.contact.linkedin
-      el.rel = 'noopener noreferrer'
-    })
-    document.querySelectorAll<HTMLAnchorElement>('.js-github-link').forEach(el => {
-      el.href = this.contact.github
       el.rel = 'noopener noreferrer'
     })
   }
@@ -118,7 +113,7 @@ class PersonalSite {
     this.overlay?.classList.add('hidden')
     document.body.classList.remove('overflow-hidden')
     this.openBtn?.setAttribute('aria-expanded', 'false')
-    this.openBtn?.focus()
+    this.openBtn?.focus({ preventScroll: true })
   }
 
   // ── Active Nav Highlight ───────────────────────────────────────────────────
@@ -191,6 +186,18 @@ class PersonalSite {
     setActiveFromScroll()
   }
 
+  // ── Resize Transition Guard ────────────────────────────────────────────────
+
+  private initResizeGuard(): void {
+    window.addEventListener('resize', () => {
+      document.body.classList.add('is-resizing')
+      if (this.resizeTimer !== null) clearTimeout(this.resizeTimer)
+      this.resizeTimer = window.setTimeout(() => {
+        document.body.classList.remove('is-resizing')
+      }, 200)
+    }, { passive: true })
+  }
+
   // ── Footer Year ────────────────────────────────────────────────────────────
 
   private initFooterYear(): void {
@@ -201,12 +208,18 @@ class PersonalSite {
   // ── Public API ─────────────────────────────────────────────────────────────
 
   public init(): void {
+    console.log(
+      '%c Looking for something special? Let\'s talk about it → mihnea.co@web.de ',
+      'background:#774069;color:#fff;padding:6px 12px;border-radius:4px;font-size:13px;font-weight:500;',
+    )
     renderLogoWall('logo-wall')
     this.initIcons()
     this.initContact()
     this.initDrawer()
     this.initActiveNav()
+    this.initResizeGuard()
     this.initFooterYear()
+    document.body.classList.remove('is-resizing')
   }
 
   /** Factory method — preferred entry point */

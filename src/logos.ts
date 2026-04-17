@@ -127,9 +127,12 @@ export function renderLogoWall(containerId: string): void {
   const container = document.getElementById(containerId)
   if (!container) return
 
+  const half = Math.floor(CLIENT_LOGOS.length / 2)
+  const secondRow = [...CLIENT_LOGOS.slice(half), ...CLIENT_LOGOS.slice(0, half)]
+
   container.classList.add('logos-wall', 'space-y-10')
   container.replaceChildren(
     createMarquee(CLIENT_LOGOS, { reverse: false, ariaLabel: 'Kundenlogos' }),
-    createMarquee([...CLIENT_LOGOS].reverse(), { reverse: true }),
+    createMarquee(secondRow, { reverse: true }),
   )
 }

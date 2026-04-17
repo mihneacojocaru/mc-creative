@@ -38,7 +38,7 @@
     <title>Mihnea Cojocaru | Senior Frontend Developer</title>
   </head>
 
-  <body class="text-neutral-800 font-sans antialiased">
+  <body class="text-neutral-800 font-sans antialiased is-resizing">
 
     <!-- ================================================================
          MOBILE OVERLAY (closes drawer on click)
@@ -69,6 +69,9 @@
           />
         </div>
         <p class="text-sm font-semibold text-neutral-900 leading-snug mb-0.5">Mihnea Cojocaru</p>
+        <p class="text-xs text-neutral-500 leading-snug mb-2 font-light tracking-wide" aria-label="Aussprache">
+          <span class="italic">/ˈmich-na ko-dscho-ka-ru/</span>
+        </p>
         <p class="text-sm text-neutral-500 leading-snug">Senior Frontend Developer</p>
         <p class="text-sm text-neutral-600 mt-1">Troisdorf, DE</p>
       </div>
@@ -107,15 +110,6 @@
           >
             <i data-lucide="linkedin" class="w-4 h-4"></i>
           </a>
-          <a
-            class="js-github-link social-icon-btn"
-            href="#"
-            target="_blank"
-            title="GitHub"
-            aria-label="GitHub-Profil öffnen"
-          >
-            <i data-lucide="github" class="w-4 h-4"></i>
-          </a>
         </div>
       </div>
 
@@ -135,7 +129,10 @@
     <header
       class="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-neutral-100 flex items-center justify-between px-5 h-14 lg:hidden"
     >
-      <span class="text-sm font-semibold text-neutral-900">Mihnea Cojocaru</span>
+      <div class="flex items-center gap-2.5">
+        <img src="/android-chrome-192x192.png" alt="" aria-hidden="true" class="w-7 h-7 rounded" />
+        <span class="text-sm font-semibold text-neutral-900">Mihnea Cojocaru</span>
+      </div>
       <button
         id="sidebar-open"
         class="p-1.5 rounded text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors duration-150"
@@ -155,7 +152,7 @@
       <!-- ============================================================
            1. INTRO / HERO
       ============================================================ -->
-      <section id="intro" class="border-b border-neutral-100 py-12 md:py-16 px-6">
+      <section id="intro" class="border-b border-neutral-100 py-8 md:py-16 px-6">
         <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center">
 
           <!-- Portrait -->
@@ -198,7 +195,7 @@
       <!-- ============================================================
            2. WHAT I DO
       ============================================================ -->
-      <section id="what-i-do" class="py-20 px-6 border-b border-neutral-100">
+      <section id="what-i-do" class="py-8 md:py-20 px-6 border-b border-neutral-100">
         <div class="max-w-5xl mx-auto">
           <h2 class="section-heading">Was ich mache</h2>
 
@@ -289,7 +286,7 @@
       <!-- ============================================================
            3. CORE INFO (two columns)
       ============================================================ -->
-      <section id="core-info" class="py-20 px-6 border-b border-neutral-100 bg-neutral-50/60">
+      <section id="core-info" class="py-8 md:py-20 px-6 border-b border-neutral-100 bg-neutral-50/60">
         <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
 
           <!-- Left: How I work -->
@@ -317,7 +314,7 @@
 
           <!-- Right: Profile facts -->
           <div>
-            <h2 class="section-heading">Profil</h2>
+            <h2 class="section-heading">Auf einen Blick</h2>
             <div class="mt-8 space-y-8">
 
               <div>
@@ -345,7 +342,7 @@
                   Standort
                 </h3>
                 <div class="flex items-center gap-2 text-base text-neutral-600">
-                  <i data-lucide="map-pin" class="w-4 h-4 text-accent flex-shrink-0"></i>
+                  <i data-lucide="map-pin" class="w-4 h-4 text-accent shrink-0"></i>
                   <span>Troisdorf, Nordrhein-Westfalen</span>
                 </div>
               </div>
@@ -369,7 +366,7 @@
       <!-- ============================================================
            4. RESUME
       ============================================================ -->
-      <section id="resume" class="py-20 px-6 border-b border-neutral-100">
+      <section id="resume" class="py-8 md:py-20 px-6 border-b border-neutral-100">
         <div class="max-w-5xl mx-auto">
           <h2 class="section-heading">Lebenslauf</h2>
 
@@ -524,7 +521,7 @@
       <!-- ============================================================
            5. TECHNOLOGIES
       ============================================================ -->
-      <section id="technologies" class="py-20 px-6 border-b border-neutral-100 bg-neutral-50/60">
+      <section id="technologies" class="py-8 md:py-20 px-6 border-b border-neutral-100 bg-neutral-50/60">
         <div class="max-w-5xl mx-auto">
           <h2 class="section-heading">Technologien &amp; Tools</h2>
 
@@ -636,7 +633,7 @@
       <section id="clients" class="py-20 border-b border-neutral-100">
         <div class="max-w-5xl mx-auto px-6 mb-10 lg:mb-16">
           <h2 class="section-heading">Ausgewählte Kunden</h2>
-          <p class="text-base text-neutral-500 mt-2">
+          <p class="text-base text-neutral-500 mt-4">
             Projekte aus mehreren Jahren Zusammenarbeit bei u+i interact GmbH und als Freiberufler.
           </p>
         </div>
@@ -647,49 +644,49 @@
       <!-- ============================================================
            7. SOFT SKILLS
       ============================================================ -->
-      <section id="softskills" class="py-20 px-6 border-b border-neutral-100 bg-neutral-50/60">
+      <section id="softskills" class="py-8 md:py-20 px-6 border-b border-neutral-100 bg-neutral-50/60">
         <div class="max-w-5xl mx-auto">
           <h2 class="section-heading">Soft Skills</h2>
 
           <div class="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-3">
 
             <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
-              <i data-lucide="list-ordered" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <i data-lucide="list-ordered" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
               <p class="text-base text-neutral-700 leading-snug">
                 Strukturierte &amp; selbstständige Arbeitsweise
               </p>
             </div>
 
             <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
-              <i data-lucide="shield-check" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <i data-lucide="shield-check" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
               <p class="text-base text-neutral-700 leading-snug">
                 Hohes Qualitätsbewusstsein
               </p>
             </div>
 
             <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
-              <i data-lucide="lightbulb" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <i data-lucide="lightbulb" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
               <p class="text-base text-neutral-700 leading-snug">
                 Lösungsorientiertes Denken
               </p>
             </div>
 
             <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
-              <i data-lucide="users" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <i data-lucide="users" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
               <p class="text-base text-neutral-700 leading-snug">
                 Teamfähigkeit &amp; Kommunikationsstärke
               </p>
             </div>
 
             <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
-              <i data-lucide="book-open" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <i data-lucide="book-open" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
               <p class="text-base text-neutral-700 leading-snug">
                 Schnelle Einarbeitung in neue Themen
               </p>
             </div>
 
             <div class="flex items-start gap-3 p-5 bg-white border border-neutral-100 rounded">
-              <i data-lucide="network" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+              <i data-lucide="network" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
               <p class="text-base text-neutral-700 leading-snug">
                 Zusammenarbeit in interdisziplinären Teams
               </p>
@@ -702,72 +699,71 @@
       <!-- ============================================================
            8. EHRENAMT
       ============================================================ -->
-      <section id="ehrenamt" class="py-20 px-6 border-b border-neutral-100">
+      <section id="ehrenamt" class="py-8 md:py-20 px-6 border-b border-neutral-100">
         <div class="max-w-5xl mx-auto">
           <h2 class="section-heading">Ehrenamt</h2>
 
-          <div class="mt-10 grid md:grid-cols-2 gap-12">
+          <div class="mt-10 grid md:grid-cols-2 gap-16">
 
             <div>
-              <div class="flex items-center gap-3 mb-2">
-                <i data-lucide="volume-2" class="w-5 h-5 text-accent flex-shrink-0"></i>
-                <h3 class="text-2xl font-semibold text-neutral-900">
+              <div class="flex items-start gap-3 mb-3">
+                <i data-lucide="volume-2" class="w-5 h-5 text-accent shrink-0 mt-1"></i>
+                <h3 class="text-xl font-semibold text-neutral-900 leading-snug">
                   Technische Beratung &amp; Systembetreuung
                 </h3>
               </div>
-              <p class="text-sm text-neutral-600 mb-5 ml-8">seit 2021 · ehrenamtlich</p>
-              <p class="text-base text-neutral-600 leading-relaxed mb-6">
-                Ehrenamtliche Unterstützung im kirchlichen Umfeld: Planung, Aufbau und Kalibrierung
-                von Audio- und Veranstaltungssystemen sowie Schulung und fachliche Begleitung
-                von Technikteams.
+              <p class="text-sm text-neutral-600 mb-6 ml-8 tracking-wide">seit 2021 · ehrenamtlich</p>
+              <p class="text-base text-neutral-600 leading-loose mb-7">
+                Planung, Aufbau und Kalibrierung von Audio- und Veranstaltungssystemen
+                sowie Schulung und fachliche Begleitung von Technikteams im kirchlichen Umfeld.
               </p>
-              <ul class="space-y-2.5">
+              <ul class="space-y-3">
                 <li class="flex items-start gap-2.5 text-base text-neutral-600">
-                  <i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                  <i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
                   <span>Planung, Aufbau und Kalibrierung von Beschallungssystemen</span>
                 </li>
                 <li class="flex items-start gap-2.5 text-base text-neutral-600">
-                  <i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                  <i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
                   <span>Schulung und Training von Technikteams</span>
                 </li>
                 <li class="flex items-start gap-2.5 text-base text-neutral-600">
-                  <i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                  <i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
                   <span>Optimierung bestehender Veranstaltungssetups</span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-5">
+              <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-6">
                 Unterstützte Kirchen
               </h3>
-              <ul class="space-y-2.5">
-                <li class="flex items-center gap-2.5 text-base text-neutral-600">
-                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
-                  FCG Bielefeld (Freie Evangelische Christengemeinde)
+              <ul class="grid grid-cols-2 gap-x-6 gap-y-3">
+                <li class="flex items-center gap-2 text-sm text-neutral-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0"></span>
+                  FCG Bielefeld
                 </li>
-                <li class="flex items-center gap-2.5 text-base text-neutral-600">
-                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                <li class="flex items-center gap-2 text-sm text-neutral-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0"></span>
                   FCG Gütersloh
                 </li>
-                <li class="flex items-center gap-2.5 text-base text-neutral-600">
-                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
-                  KfH – Kirche für Herford
+                <li class="flex items-center gap-2 text-sm text-neutral-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0"></span>
+                  KfH Herford
                 </li>
-                <li class="flex items-center gap-2.5 text-base text-neutral-600">
-                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                <li class="flex items-center gap-2 text-sm text-neutral-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0"></span>
                   ICF Bielefeld
                 </li>
-                <li class="flex items-center gap-2.5 text-base text-neutral-600">
-                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                <li class="flex items-center gap-2 text-sm text-neutral-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0"></span>
                   Ecclesia Bielefeld
                 </li>
-                <li class="flex items-center gap-2.5 text-base text-neutral-600">
-                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                <li class="flex items-center gap-2 text-sm text-neutral-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0"></span>
                   Kirche für Bonn
                 </li>
-                <li class="flex items-center gap-2.5 text-base text-neutral-600">
-                  <span class="w-1 h-1 rounded-full bg-neutral-300 flex-shrink-0"></span>
+                <li class="flex items-center gap-2 text-sm text-neutral-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0"></span>
                   CCT
                 </li>
               </ul>
@@ -780,32 +776,41 @@
       <!-- ============================================================
            9. CONTACT
       ============================================================ -->
-      <section id="contact" class="py-20 px-6">
+      <section id="contact" class="py-8 md:py-20 px-6">
         <div class="max-w-5xl mx-auto">
           <h2 class="section-heading">Kontakt</h2>
-          <p class="text-base text-neutral-500 mt-3 mb-10 max-w-md">
-            Ich freue mich über Anfragen zu Projekten, Zusammenarbeit oder einem ersten
-            unverbindlichen Gespräch.
-          </p>
 
-          <div class="flex flex-col sm:flex-row flex-wrap gap-3">
-            <a
-              class="js-email-link contact-link"
-              href="#"
-              aria-label="E-Mail senden"
-            >
-              <i data-lucide="mail" class="w-5 h-5 text-accent"></i>
-              <span class="js-email-text">E-Mail laden …</span>
-            </a>
-            <a
-              class="js-linkedin-link contact-link"
-              href="#"
-              target="_blank"
-              aria-label="LinkedIn-Profil öffnen"
-            >
-              <i data-lucide="linkedin" class="w-5 h-5 text-accent"></i>
-              <span>LinkedIn</span>
-            </a>
+          <div class="mt-10 md:grid md:grid-cols-2 md:gap-16 md:items-start">
+
+            <div>
+              <p class="text-base leading-relaxed">
+                Findest du meine Arbeit interessant? Sprich mich gerne an.
+              </p>
+              <p class="text-base text-neutral-500 mt-3 leading-relaxed">
+                Wir können über Technik sprechen — oder einfach darüber, warum Deployments am Freitagnachmittag keine gute Idee sind.
+              </p>
+            </div>
+
+            <div class="mt-8 md:mt-0 flex flex-col gap-3 items-start">
+              <a
+                class="js-email-link contact-link"
+                href="#"
+                aria-label="E-Mail senden"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                <span class="js-email-text">E-Mail laden …</span>
+              </a>
+              <a
+                class="js-linkedin-link contact-link"
+                href="#"
+                target="_blank"
+                aria-label="LinkedIn-Profil öffnen"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
