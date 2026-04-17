@@ -40,6 +40,10 @@
 
   <body class="text-neutral-800 font-sans antialiased is-resizing">
 
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-sm focus:text-sm focus:font-medium">
+      Zum Inhalt springen
+    </a>
+
     <!-- ================================================================
          MOBILE OVERLAY (closes drawer on click)
     ================================================================ -->
@@ -59,7 +63,7 @@
     >
       <!-- Profile -->
       <div class="p-8 pb-6 border-b border-neutral-100">
-        <div class="w-20 h-20 rounded-full overflow-hidden mb-5 ring-2 ring-neutral-100">
+        <a href="#intro" class="block w-20 h-20 rounded-full overflow-hidden mb-5 ring-2 ring-neutral-100">
           <img
             src="/assets/images/portrait-sq.jpeg"
             alt="Mihnea Cojocaru – Profilbild"
@@ -67,7 +71,7 @@
             width="80"
             height="80"
           />
-        </div>
+        </a>
         <p class="text-sm font-semibold text-neutral-900 leading-snug mb-0.5">Mihnea Cojocaru</p>
         <p class="text-xs text-neutral-500 leading-snug mb-2 font-light tracking-wide" aria-label="Aussprache">
           <span class="italic">/ˈmich-na ko-dscho-ka-ru/</span>
@@ -129,10 +133,10 @@
     <header
       class="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-neutral-100 flex items-center justify-between px-5 h-14 lg:hidden"
     >
-      <div class="flex items-center gap-2.5">
+      <a href="#intro" class="flex items-center gap-2.5">
         <img src="/android-chrome-192x192.png" alt="" aria-hidden="true" class="w-7 h-7 rounded" />
         <span class="text-sm font-semibold text-neutral-900">Mihnea Cojocaru</span>
-      </div>
+      </a>
       <button
         id="sidebar-open"
         class="p-1.5 rounded text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors duration-150"
@@ -147,7 +151,7 @@
     <!-- ================================================================
          MAIN CONTENT
     ================================================================ -->
-    <main class="lg:ml-64">
+    <main id="main-content" class="lg:ml-64">
 
       <!-- ============================================================
            1. INTRO / HERO
@@ -167,12 +171,14 @@
 
           <!-- Intro Text -->
           <div class="flex flex-col justify-center">
-            <p class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-4">
-              Senior Frontend Developer
-            </p>
-            <h1 class="font-display text-5xl md:text-6xl font-bold text-neutral-900 leading-none mb-7">
-              Mihnea<br />Cojocaru
-            </h1>
+            <hgroup class="mb-7">
+              <p class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-4">
+                Senior Frontend Developer
+              </p>
+              <h1 class="font-display text-5xl md:text-6xl font-bold text-neutral-900 leading-none">
+                Mihnea<br />Cojocaru
+              </h1>
+            </hgroup>
             <p class="text-base text-neutral-600 leading-relaxed max-w-sm mb-8">
               Frontend- und Full-Stack-Entwickler mit Schwerpunkt auf TYPO3, modernen
               Frontend-Technologien, barrierearmen Weblösungen und performanten Benutzeroberflächen.
@@ -385,8 +391,10 @@
                     <p class="text-sm text-neutral">2022 – heute</p>
                   </div>
                   <div class="pl-6 space-y-4">
-                    <h4 class="text-2xl font-semibold text-neutral-900">Fullstack-Entwickler, Fokus Frontend</h4>
-                    <p class="text-sm text-neutral-700">u+i interact GmbH · Bielefeld, DE</p>
+                    <hgroup>
+                      <h4 class="text-2xl font-semibold text-neutral-900">Fullstack-Entwickler, Fokus Frontend</h4>
+                      <p class="text-sm text-neutral-700">u+i interact GmbH · Bielefeld, DE</p>
+                    </hgroup>
                     <p class="text-sm text-neutral-600 leading-relaxed">
                       Entwicklung moderner Webprojekte mit TYPO3, Vue.js, React und Alpine.js.
                       Technische Beratung, Accessibility, Performance-Optimierung,
@@ -401,8 +409,10 @@
                     <p class="text-sm text-neutral-600">2021 – 2022</p>
                   </div>
                   <div class="pl-6 space-y-4">
-                    <h4 class="text-2xl font-semibold text-neutral-900">Fullstack-Entwickler (freiberuflich)</h4>
-                    <p class="text-sm text-neutral-700">Selbstständig · Bielefeld, DE</p>
+                    <hgroup>
+                      <h4 class="text-2xl font-semibold text-neutral-900">Fullstack-Entwickler (freiberuflich)</h4>
+                      <p class="text-sm text-neutral-700">Selbstständig · Bielefeld, DE</p>
+                    </hgroup>
                     <p class="text-sm text-neutral-600 leading-relaxed">
                       Design und Umsetzung nutzerfreundlicher Weboberﬂächen,
                       individuelle Frontend-Lösungen, Direktkontakt mit Kunden.
@@ -416,8 +426,10 @@
                     <p class="text-sm text-neutral-600">2013 – 2020</p>
                   </div>
                   <div class="pl-6 space-y-4">
-                    <h4 class="text-2xl font-semibold text-neutral-900">Freiberufliche Audio- und Multimediaprojekte</h4>
-                    <p class="text-sm text-neutral-700">Selbstständig · Bukarest, Rumänien</p>
+                    <hgroup>
+                      <h4 class="text-2xl font-semibold text-neutral-900">Freiberufliche Audio- und Multimediaprojekte</h4>
+                      <p class="text-sm text-neutral-700">Selbstständig · Bukarest, Rumänien</p>
+                    </hgroup>
                     <p class="text-sm text-neutral-600 leading-relaxed">
                       Technische Betreuung, Planung und Umsetzung von Projekten
                       im Audio- und Veranstaltungsbereich.
@@ -431,8 +443,10 @@
                     <p class="text-sm text-neutral-600">2017 – 2020</p>
                   </div>
                   <div class="pl-6 space-y-4">
-                    <h4 class="text-2xl font-semibold text-neutral-900">Toningenieur</h4>
-                    <p class="text-sm text-neutral-700">Harmonic Design GmbH · Bukarest, Rumänien</p>
+                    <hgroup>
+                      <h4 class="text-2xl font-semibold text-neutral-900">Toningenieur</h4>
+                      <p class="text-sm text-neutral-700">Harmonic Design GmbH · Bukarest, Rumänien</p>
+                    </hgroup>
                     <p class="text-sm text-neutral-600 leading-relaxed">
                       Projektmanagement, Konfiguration und Kalibrierung von Audioanlagen,
                       technische Betreuung professioneller Audioumgebungen.
@@ -446,8 +460,10 @@
                     <p class="text-sm text-neutral-600">2013 – 2017</p>
                   </div>
                   <div class="pl-6 space-y-4">
-                    <h4 class="text-2xl font-semibold text-neutral-900">Toningenieur</h4>
-                    <p class="text-sm text-neutral-700">Theater „Constantin Tanase" · Bukarest, Rumänien</p>
+                    <hgroup>
+                      <h4 class="text-2xl font-semibold text-neutral-900">Toningenieur</h4>
+                      <p class="text-sm text-neutral-700">Theater „Constantin Tanase" · Bukarest, Rumänien</p>
+                    </hgroup>
                     <p class="text-sm text-neutral-600 leading-relaxed">
                       Planung von Grafik- und Tondesign, Projektmanagement,
                       technische Begleitung von Produktionen.
@@ -471,8 +487,10 @@
                     <p class="text-sm text-neutral-600">2020 – 2021</p>
                   </div>
                   <div class="pl-6 space-y-4">
-                    <h4 class="text-2xl font-semibold text-neutral-900">Full-Stack Web Development</h4>
-                    <p class="text-sm text-neutral-700">My Code School, · Hermannstadt, Rumänien</p>
+                    <hgroup>
+                      <h4 class="text-2xl font-semibold text-neutral-900">Full-Stack Web Development</h4>
+                      <p class="text-sm text-neutral-700">My Code School · Hermannstadt, Rumänien</p>
+                    </hgroup>
                     <p class="text-sm text-neutral-600 leading-relaxed">
                       Gezielte Weiterbildung mit Fokus auf moderne Webtechnologien
                       und praxisnahe Anwendungsentwicklung.
@@ -486,8 +504,10 @@
                     <p class="text-sm text-neutral-600">2010 – 2014</p>
                   </div>
                   <div class="pl-6 space-y-4">
-                    <h4 class="text-2xl font-semibold text-neutral-900">Diplom-Ingenieur / B.Sc.</h4>
-                    <p class="text-sm text-neutral-700">Polytechnische Universität Bukarest</p>
+                    <hgroup>
+                      <h4 class="text-2xl font-semibold text-neutral-900">Diplom-Ingenieur / B.Sc.</h4>
+                      <p class="text-sm text-neutral-700">Polytechnische Universität Bukarest</p>
+                    </hgroup>
                     <p class="text-sm text-neutral-600 leading-relaxed">
                       Elektronik, Telekommunikation &amp; Informationstechnik –
                       Spezialisierung Tontechnik.
@@ -501,10 +521,12 @@
                     <p class="text-sm text-neutral-600">2006 – 2010</p>
                   </div>
                   <div class="pl-6 space-y-4">
-                    <h4 class="text-2xl font-semibold text-neutral-900">Allgemeine Hochschulreife</h4>
-                    <p class="text-sm text-neutral-700">
-                      Nationales Kolleg „Ion C. Bratianu" · Pitesti, Rumänien
-                    </p>
+                    <hgroup>
+                      <h4 class="text-2xl font-semibold text-neutral-900">Allgemeine Hochschulreife</h4>
+                      <p class="text-sm text-neutral-700">
+                        Nationales Kolleg „Ion C. Bratianu" · Pitesti, Rumänien
+                      </p>
+                    </hgroup>
                     <p class="text-sm text-neutral-600 leading-relaxed">
                       Vergleichbar mit dem deutschen Abitur.
                     </p>
@@ -632,10 +654,12 @@
       ============================================================ -->
       <section id="clients" class="py-20 border-b border-neutral-100">
         <div class="max-w-5xl mx-auto px-6 mb-10 lg:mb-16">
-          <h2 class="section-heading">Ausgewählte Kunden</h2>
-          <p class="text-base text-neutral-500 mt-4">
-            Projekte aus mehreren Jahren Zusammenarbeit bei u+i interact GmbH und als Freiberufler.
-          </p>
+          <hgroup>
+            <h2 class="section-heading">Einblick in meine Projektarbeit</h2>
+            <p class="text-base text-neutral-500 mt-4">
+              Eine Auswahl an Kundenprojekten, an denen ich im Laufe mehrerer Jahre bei u+i interact GmbH mitgearbeitet habe.
+            </p>
+          </hgroup>
         </div>
 
         <div id="logo-wall"></div>
@@ -704,13 +728,15 @@
           <h2 class="section-heading">Ehrenamt</h2>
 
           <div class="mt-10">
-            <div class="flex items-start gap-3 mb-2">
+            <div class="flex items-start gap-3">
               <i data-lucide="volume-2" class="w-5 h-5 text-accent shrink-0 mt-1"></i>
-              <h3 class="text-xl font-semibold text-neutral-900 leading-snug">
-                Technische Beratung &amp; Systembetreuung
-              </h3>
+              <hgroup class="mb-8">
+                <h3 class="text-xl font-semibold text-neutral-900 leading-snug mb-1">
+                  Technische Beratung &amp; Systembetreuung
+                </h3>
+                <p class="text-sm text-neutral-600 tracking-wide">seit 2021 · ehrenamtlich</p>
+              </hgroup>
             </div>
-            <p class="text-sm text-neutral-600 mb-8 ml-8 tracking-wide">seit 2021 · ehrenamtlich</p>
           </div>
 
           <div class="grid md:grid-cols-2 gap-16">
@@ -736,9 +762,9 @@
             </div>
 
             <div>
-              <h3 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-6">
+              <h4 class="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-6">
                 Unterstützte Kirchen
-              </h3>
+              </h4>
               <ul class="grid grid-cols-2 gap-x-6 gap-y-3">
                 <li class="flex items-center gap-2 text-sm text-neutral-600">
                   <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0"></span>
