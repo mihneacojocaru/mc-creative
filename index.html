@@ -27,13 +27,25 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
 
+    <!-- LCP image preload -->
+    <link rel="preload" as="image" href="/assets/images/portrait.jpeg" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <title>Mihnea Cojocaru | Frontend Developer</title>
   </head>
@@ -166,6 +178,7 @@
               alt="Mihnea Cojocaru – Senior Frontend Developer"
               class="w-full h-full object-cover object-center absolute inset-0"
               loading="eager"
+              fetchpriority="high"
             />
           </div>
 
@@ -820,7 +833,6 @@
                 <a
                   class="js-email-link contact-link"
                   href="#"
-                  aria-label="E-Mail senden"
                 >
                   <i data-lucide="mail" class="w-5 h-5"></i>
                   <span class="js-email-text">E-Mail laden …</span>

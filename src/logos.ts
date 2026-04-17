@@ -62,6 +62,8 @@ function createTile(logo: ClientLogo, decorative: boolean): HTMLAnchorElement {
   const img = document.createElement('img')
   img.src = logo.image
   img.alt = decorative ? '' : (logo.alt ?? `${logo.name} Logo`)
+  img.width = 240
+  img.height = 128
   imageWrap.appendChild(img)
 
   const label = document.createElement('span')
