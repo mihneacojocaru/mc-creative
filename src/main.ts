@@ -3,18 +3,20 @@ import {
   createIcons,
   Mail, Linkedin,
   X, Menu, ArrowDown,
-  Monitor, Globe, Eye, Zap, MessageCircle, Boxes,
+  Monitor, Globe, Eye, Zap, MessageCircle,
   MapPin, Code2, Package, Layers, CheckCircle, Wrench, Star,
   Volume2, Check, ListOrdered, ShieldCheck, Lightbulb, Users, BookOpen, Network,
+  Bot,
 } from 'lucide'
 import { renderLogoWall } from './logos'
 
 const ICONS = {
   Mail, Linkedin,
   X, Menu, ArrowDown,
-  Monitor, Globe, Eye, Zap, MessageCircle, Boxes,
+  Monitor, Globe, Eye, Zap, MessageCircle,
   MapPin, Code2, Package, Layers, CheckCircle, Wrench, Star,
   Volume2, Check, ListOrdered, ShieldCheck, Lightbulb, Users, BookOpen, Network,
+  Bot,
 }
 
 // ─── Types ────────────────────────────────────────────────────────────────────
